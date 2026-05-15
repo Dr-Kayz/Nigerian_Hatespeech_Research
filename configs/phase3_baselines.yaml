@@ -1,0 +1,26 @@
+# Phase 3: classical ML baselines (template §4.1 + §5.1 + §6.1 + §6.2)
+#
+# Runs every combination of (model x scenario). For monolingual, scenario
+# expands to 4 runs (one per language). For multilingual_joint, scenario is
+# 1 run trained on combined data and evaluated overall + per language.
+
+seed: 42
+
+models:
+  - svm
+  - nb
+  - rf
+
+scenarios:
+  - name: monolingual
+    languages: [English, Yoruba, Igbo, Hausa]
+  - name: multilingual_joint
+    train_languages: [English, Yoruba, Igbo, Hausa]
+    eval_per_language: true
+
+features:
+  word_ngrams: [1, 2]
+  char_ngrams: [3, 5]
+  word_max_features: 50000
+  char_max_features: 50000
+  min_df: 5
