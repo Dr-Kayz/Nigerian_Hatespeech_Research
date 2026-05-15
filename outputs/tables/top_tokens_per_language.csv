@@ -1,0 +1,241 @@
+language,label,token,count
+English,Hate,the,1731
+English,Hate,are,1097
+English,Hate,and,1029
+English,Hate,you,724
+English,Hate,they,466
+English,Hate,fulani,421
+English,Hate,that,382
+English,Hate,this,362
+English,Hate,for,352
+English,Hate,with,315
+English,Hate,their,298
+English,Hate,your,286
+English,Hate,will,285
+English,Hate,not,275
+English,Hate,people,266
+English,Hate,all,265
+English,Hate,have,254
+English,Hate,but,213
+English,Hate,like,199
+English,Hate,from,194
+English,Neutral,the,1242
+English,Neutral,you,970
+English,Neutral,and,813
+English,Neutral,are,678
+English,Neutral,that,427
+English,Neutral,this,418
+English,Neutral,for,386
+English,Neutral,your,338
+English,Neutral,they,258
+English,Neutral,not,250
+English,Neutral,with,236
+English,Neutral,have,223
+English,Neutral,will,219
+English,Neutral,like,219
+English,Neutral,but,198
+English,Neutral,all,194
+English,Neutral,just,186
+English,Neutral,what,175
+English,Neutral,people,171
+English,Neutral,their,151
+English,Not Hate,the,1111
+English,Not Hate,and,638
+English,Not Hate,you,453
+English,Not Hate,are,391
+English,Not Hate,for,318
+English,Not Hate,that,240
+English,Not Hate,this,236
+English,Not Hate,not,214
+English,Not Hate,with,195
+English,Not Hate,they,190
+English,Not Hate,all,171
+English,Not Hate,have,167
+English,Not Hate,your,163
+English,Not Hate,will,160
+English,Not Hate,people,140
+English,Not Hate,from,130
+English,Not Hate,like,118
+English,Not Hate,fulani,114
+English,Not Hate,just,113
+English,Not Hate,who,110
+Yoruba,Hate,àwọn,3181
+Yoruba,Hate,ẹyẹ,2558
+Yoruba,Hate,wọ́n,1101
+Yoruba,Hate,ẹ̀yin,825
+Yoruba,Hate,jẹ́,715
+Yoruba,Hate,wọn,707
+Yoruba,Hate,máa,625
+Yoruba,Hate,inu,547
+Yoruba,Hate,ìsìn,540
+Yoruba,Hate,ọmọ,476
+Yoruba,Hate,ẹ̀yìn,441
+Yoruba,Hate,kan,429
+Yoruba,Hate,àti,416
+Yoruba,Hate,láti,393
+Yoruba,Hate,ẹ̀mí,386
+Yoruba,Hate,ohun,381
+Yoruba,Hate,awọn,377
+Yoruba,Hate,fulani,377
+Yoruba,Hate,fún,369
+Yoruba,Hate,èèyàn,353
+Yoruba,Neutral,àwọn,1852
+Yoruba,Neutral,ẹ̀yin,1066
+Yoruba,Neutral,ẹyẹ,883
+Yoruba,Neutral,wọ́n,613
+Yoruba,Neutral,máa,576
+Yoruba,Neutral,jẹ́,538
+Yoruba,Neutral,ọmọ,426
+Yoruba,Neutral,fún,423
+Yoruba,Neutral,kan,411
+Yoruba,Neutral,ẹ̀mí,390
+Yoruba,Neutral,ohun,382
+Yoruba,Neutral,láti,348
+Yoruba,Neutral,wọn,311
+Yoruba,Neutral,"mi,",306
+Yoruba,Neutral,àti,304
+Yoruba,Neutral,ẹyin,295
+Yoruba,Neutral,yìí,294
+Yoruba,Neutral,òmùgọ̀,293
+Yoruba,Neutral,awọn,278
+Yoruba,Neutral,ẹ̀n,271
+Yoruba,Not Hate,àwọn,2218
+Yoruba,Not Hate,ẹyẹ,1751
+Yoruba,Not Hate,wọ́n,595
+Yoruba,Not Hate,ẹ̀yin,498
+Yoruba,Not Hate,ọdún,437
+Yoruba,Not Hate,máa,423
+Yoruba,Not Hate,kan,389
+Yoruba,Not Hate,fún,378
+Yoruba,Not Hate,ogun,363
+Yoruba,Not Hate,ọmọ,358
+Yoruba,Not Hate,lati,356
+Yoruba,Not Hate,jẹ́,340
+Yoruba,Not Hate,láti,313
+Yoruba,Not Hate,omi,294
+Yoruba,Not Hate,lórí,294
+Yoruba,Not Hate,ohun,284
+Yoruba,Not Hate,ẹmí,261
+Yoruba,Not Hate,àti,241
+Yoruba,Not Hate,wọn,239
+Yoruba,Not Hate,awọn,231
+Igbo,Hate,ndị,2865
+Igbo,Hate,ihe,1120
+Igbo,Hate,nke,742
+Igbo,Hate,na-eme,595
+Igbo,Hate,ụmụ,522
+Igbo,Hate,onye,484
+Igbo,Hate,anya,468
+Igbo,Hate,mgbe,397
+Igbo,Hate,fulani,378
+Igbo,Hate,anyị,364
+Igbo,Hate,ike,350
+Igbo,Hate,nwere,311
+Igbo,Hate,ahụ,277
+Igbo,Hate,nwoke,273
+Igbo,Hate,ugwu,264
+Igbo,Hate,eme,264
+Igbo,Hate,bụrụ,249
+Igbo,Hate,niile,238
+Igbo,Hate,maka,219
+Igbo,Hate,n'ebe,215
+Igbo,Neutral,ndị,1640
+Igbo,Neutral,ihe,1011
+Igbo,Neutral,onye,824
+Igbo,Neutral,na-eme,659
+Igbo,Neutral,nke,637
+Igbo,Neutral,nzuzu,342
+Igbo,Neutral,ụmụ,342
+Igbo,Neutral,ike,331
+Igbo,Neutral,ahụ,321
+Igbo,Neutral,akpa,319
+Igbo,Neutral,anyị,318
+Igbo,Neutral,bụrụ,304
+Igbo,Neutral,mgbe,276
+Igbo,Neutral,nwere,256
+Igbo,Neutral,maka,254
+Igbo,Neutral,nwoke,217
+Igbo,Neutral,mere,196
+Igbo,Neutral,n'ihi,172
+Igbo,Neutral,agbọghọ,170
+Igbo,Neutral,na-ekwu,168
+Igbo,Not Hate,ndị,1405
+Igbo,Not Hate,ihe,937
+Igbo,Not Hate,nke,827
+Igbo,Not Hate,na-eme,594
+Igbo,Not Hate,ori,583
+Igbo,Not Hate,onye,399
+Igbo,Not Hate,anyị,336
+Igbo,Not Hate,"oh,",299
+Igbo,Not Hate,ụmụ,279
+Igbo,Not Hate,na-,244
+Igbo,Not Hate,ike,230
+Igbo,Not Hate,maka,221
+Igbo,Not Hate,bụrụ,221
+Igbo,Not Hate,nwere,218
+Igbo,Not Hate,mgbe,209
+Igbo,Not Hate,ahụ,207
+Igbo,Not Hate,na-enwe,204
+Igbo,Not Hate,nwoke,171
+Igbo,Not Hate,mere,149
+Igbo,Not Hate,obi,149
+Hausa,Hate,suna,665
+Hausa,Hate,'yan,639
+Hausa,Hate,kuma,635
+Hausa,Hate,tsananin,596
+Hausa,Hate,wannan,465
+Hausa,Hate,masu,434
+Hausa,Hate,fulani,406
+Hausa,Hate,wani,319
+Hausa,Hate,kya,305
+Hausa,Hate,don,301
+Hausa,Hate,labaran,297
+Hausa,Hate,mai,293
+Hausa,Hate,arewa,291
+Hausa,Hate,&amp;,282
+Hausa,Hate,daga,279
+Hausa,Hate,mata,261
+Hausa,Hate,sun,261
+Hausa,Hate,najeriya,256
+Hausa,Hate,shi,248
+Hausa,Hate,cikin,243
+Hausa,Neutral,ƙaramin,595
+Hausa,Neutral,wannan,574
+Hausa,Neutral,ƙungiyar,562
+Hausa,Neutral,kuma,518
+Hausa,Neutral,suna,467
+Hausa,Neutral,mai,425
+Hausa,Neutral,kai,376
+Hausa,Neutral,wani,366
+Hausa,Neutral,'yan,336
+Hausa,Neutral,shi,324
+Hausa,Neutral,don,315
+Hausa,Neutral,ƙwararrun,277
+Hausa,Neutral,hotuna,270
+Hausa,Neutral,iya,252
+Hausa,Neutral,cewa,244
+Hausa,Neutral,kamar,225
+Hausa,Neutral,yana,221
+Hausa,Neutral,masu,220
+Hausa,Neutral,cikin,211
+Hausa,Neutral,abin,210
+Hausa,Not Hate,yara,617
+Hausa,Not Hate,mai,569
+Hausa,Not Hate,kuma,410
+Hausa,Not Hate,shi,396
+Hausa,Not Hate,ƙarƙashin,388
+Hausa,Not Hate,wannan,330
+Hausa,Not Hate,arziki,306
+Hausa,Not Hate,jinsin,289
+Hausa,Not Hate,suna,277
+Hausa,Not Hate,wani,270
+Hausa,Not Hate,'yan,260
+Hausa,Not Hate,don,235
+Hausa,Not Hate,masu,234
+Hausa,Not Hate,sojojin,212
+Hausa,Not Hate,karamin,212
+Hausa,Not Hate,cikin,206
+Hausa,Not Hate,tsananin,200
+Hausa,Not Hate,iya,184
+Hausa,Not Hate,kar,176
+Hausa,Not Hate,daga,174

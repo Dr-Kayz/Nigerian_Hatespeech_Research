@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "method": "source_id_disjoint_stratified",
+  "fractions": {
+    "train": 0.7,
+    "val": 0.1,
+    "test": 0.2
+  },
+  "n_source_ids": {
+    "train": 4648,
+    "val": 664,
+    "test": 1329
+  },
+  "sizes": {
+    "English/train": 4648,
+    "English/val": 664,
+    "English/test": 1329,
+    "Yoruba/train": 4633,
+    "Yoruba/val": 659,
+    "Yoruba/test": 1324,
+    "Igbo/train": 4622,
+    "Igbo/val": 663,
+    "Igbo/test": 1324,
+    "Hausa/train": 4628,
+    "Hausa/val": 663,
+    "Hausa/test": 1322
+  },
+  "label_counts": {
+    "English/train": {
+      "Not Hate": 1662,
+      "Neutral": 1552,
+      "Hate": 1434
+    },
+    "English/val": {
+      "Not Hate": 237,
+      "Neutral": 222,
+      "Hate": 205
+    },
+    "English/test": {
+      "Not Hate": 476,
+      "Neutral": 443,
+      "Hate": 410
+    },
+    "Yoruba/train": {
+      "Not Hate": 1652,
+      "Neutral": 1548,
+      "Hate": 1433
+    },
+    "Yoruba/val": {
+      "Not Hate": 233,
+      "Neutral": 222,
+      "Hate": 204
+    },
+    "Yoruba/test": {
+      "Not Hate": 473,
+      "Neutral": 442,
+      "Hate": 409
+    },
+    "Igbo/train": {
+      "Not Hate": 1648,
+      "Neutral": 1545,
+      "Hate": 1429
+    },
+    "Igbo/val": {
+      "Not Hate": 236,
+      "Neutral": 222,
+      "Hate": 205
+    },
+    "Igbo/test": {
+      "Not Hate": 474,
+      "Neutral": 442,
+      "Hate": 408
+    },
+    "Hausa/train": {
+      "Not Hate": 1648,
+      "Neutral": 1549,
+      "Hate": 1431
+    },
+    "Hausa/val": {
+      "Not Hate": 236,
+      "Neutral": 222,
+      "Hate": 205
+    },
+    "Hausa/test": {
+      "Not Hate": 471,
+      "Neutral": 441,
+      "Hate": 410
+    }
+  }
+}

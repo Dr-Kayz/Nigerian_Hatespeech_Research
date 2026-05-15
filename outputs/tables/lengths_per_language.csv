@@ -1,0 +1,7 @@
+,n_chars,n_chars,n_chars,n_words,n_words,n_words
+,mean,median,max,mean,median,max
+language,,,,,,
+English,111.7,97.0,292,20.0,17.0,62
+Hausa,123.1,91.0,3290,23.7,18.0,598
+Igbo,113.8,90.0,2460,22.5,18.0,598
+Yoruba,142.5,92.0,2330,31.9,20.0,598
