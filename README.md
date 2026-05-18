@@ -24,9 +24,9 @@ python -c "import torch; print(torch.backends.mps.is_available())"
 data/             raw + cleaned + aligned + processed CSVs, train/val/test splits
 src/
   data/           pipeline: clean, align_translations, preprocess, splits, eda
-  features/       Phase 3: TF-IDF, LaBSE/LASER embeddings
-  models/         Phase 3-4: ML baselines, transformer fine-tuning
-  eval/           Phase 5: metrics, error analysis
+  features/       TF-IDF and embedding feature extractors
+  models/         ML baselines and transformer fine-tuning
+  eval/           metrics and error analysis
   utils/          seed.py, io.py (paths + constants)
 configs/          YAML per experiment
 outputs/          tables, figures, checkpoints, predictions, logs
