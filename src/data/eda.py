@@ -1,4 +1,4 @@
-"""Exploratory data analysis — produces tables and figures for §2 of the report.
+"""Exploratory data analysis — summary tables and figures describing the dataset.
 
 Reads : data/processed_aligned_dataset.csv
 Writes:

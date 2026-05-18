@@ -1,8 +1,8 @@
 """Classical ML baselines on TF-IDF features.
 
-Three baselines from the template §5.1: Linear SVM, Multinomial Naive Bayes,
-Random Forest. Each is wrapped in a sklearn Pipeline so that fit/predict on raw
-text strings handles vectorisation + classification end-to-end.
+Three baselines: Linear SVM, Multinomial Naive Bayes, Random Forest. Each is
+wrapped in a sklearn Pipeline so that fit/predict on raw text strings handles
+vectorisation + classification end-to-end.
 
 Hyperparameter notes:
     * LinearSVC C=1.0, class_weight='balanced' — class_weight compensates for

@@ -1,4 +1,4 @@
-"""Stage 1 of the data pipeline: clean the raw multilingual hate-speech CSV.
+"""Clean the raw multilingual hate-speech CSV (first step of the data pipeline).
 
 What this does (in order):
     1. Normalise text Unicode (NFC), strip hidden/control characters.

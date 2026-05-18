@@ -1,15 +1,15 @@
-# Phase 4: transformer fine-tuning (template §5.2 + §6.1-6.4)
+# Transformer fine-tuning experiments.
 #
 # Models:
-#   mbert    - bert-base-multilingual-cased (weak on Yoruba/Igbo/Hausa)
+#   mbert    - bert-base-multilingual-cased
 #   xlmr     - xlm-roberta-base
-#   afroxlmr - Davlan/afro-xlmr-base (African-language pretraining)
+#   afroxlmr - Davlan/afro-xlmr-base
 #
-# Scenarios map directly to template sections:
-#   monolingual        -> §6.1  (train + test same language)
-#   multilingual_joint -> §6.2  (train on all, eval overall + per-language)
-#   zero_shot          -> §6.3  (train English only, test on each African lang)
-#   few_shot           -> §6.4  (English + N native target examples, test target)
+# Scenarios:
+#   monolingual        - train + test same language
+#   multilingual_joint - train on all languages, eval overall + per-language
+#   zero_shot          - train English only, test on each African language
+#   few_shot           - English + N native target examples, test on target
 
 seed: 42
 

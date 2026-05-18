@@ -4,13 +4,12 @@ Design:
 - We split at the source_id level (1 source_id = 1 tweet + its 3 translations).
 - A source_id assigned to train means all 4 language rows for that tweet are in train.
 - This guarantees: (a) no leakage between train/val/test, (b) the same test source_ids
-  appear across all 4 languages — required for the §6.5 same-tweet translation impact
-  study, (c) zero-shot transfer evaluation is fair (test tweets never seen in any lang).
+  appear across all 4 languages — required for the same-tweet translation-impact
+  comparison, (c) zero-shot transfer evaluation is fair (test tweets never seen in any lang).
 
 Split sizes: 70% train, 10% val, 20% test, stratified by class.
 
 Orphans: rows whose source_id is -1 (no alignment recovered) are dropped from splits.
-This affects ~0-50 rows total based on Phase-1 alignment results.
 
 Outputs:
     data/splits/{language}_{split}.csv     for language in {english,yoruba,igbo,hausa}

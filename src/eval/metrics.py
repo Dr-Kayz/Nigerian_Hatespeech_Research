@@ -1,4 +1,4 @@
-"""Evaluation metrics for the hate-speech classifier (§7 of the template).
+"""Evaluation metrics for the hate-speech classifier.
 
 Computes:
     * Accuracy

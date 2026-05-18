@@ -1,4 +1,4 @@
-"""Phase 2 preprocessing — extends the aligned dataset.
+"""Preprocessing — extends the aligned dataset with cleaned text and quality flags.
 
 Adds these columns:
     text_proc        : URLs/mentions/RT/LINK removed, whitespace collapsed

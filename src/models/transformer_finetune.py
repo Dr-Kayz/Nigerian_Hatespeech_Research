@@ -1,16 +1,14 @@
 """Fine-tune a pretrained multilingual transformer for 3-class hate speech.
 
-This is the Phase 4 core. It wraps the Hugging Face Trainer so the rest of the
-project can fine-tune any of three pretrained models with one function call:
+Wraps the Hugging Face Trainer so a model can be fine-tuned with one function
+call. Model keys map to Hub identifiers in MODEL_REGISTRY:
 
-    mbert    -> bert-base-multilingual-cased   (saw little Yoruba/Igbo/Hausa)
-    xlmr     -> xlm-roberta-base                (more multilingual web text)
-    afroxlmr -> Davlan/afro-xlmr-base           (further-trained on African text)
+    mbert    -> bert-base-multilingual-cased
+    xlmr     -> xlm-roberta-base
+    afroxlmr -> Davlan/afro-xlmr-base
 
-We never pretrain. We download the pretrained weights and *fine-tune*: attach a
-fresh 3-class classification head and nudge the network on our labelled tweets.
-
-Runs on Apple MPS automatically (fp32 — MPS fp16 is unreliable).
+Runs on Apple MPS / CUDA / CPU (auto-detected). Uses fp32 (MPS fp16 is
+unreliable). Input column is `text_proc`; label column is `class` (0/1/2).
 """
 
 from __future__ import annotations

@@ -5,12 +5,11 @@ Builds a sklearn FeatureUnion concatenating:
     * character n-grams (default 3-5, word-boundary aware): captures subword
       morphology — important for the African languages, which inflect heavily
 
-When fit on the combined training data from ALL languages, the resulting
+When fit on the combined training data from all languages, the resulting
 vectoriser produces a single feature space in which any language's text can be
-represented. This is what enables:
-    * §6.2 multilingual joint training (one model on combined data)
-    * §6.3 zero-shot transfer (English-trained model scores Yoruba text)
-without retraining the vectoriser per language.
+represented with the same vocabulary. This lets one model train on combined
+multilingual data, and lets a model trained on one language score text in
+another, without refitting the vectoriser per language.
 """
 
 from __future__ import annotations

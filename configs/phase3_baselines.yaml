@@ -1,4 +1,4 @@
-# Phase 3: classical ML baselines (template §4.1 + §5.1 + §6.1 + §6.2)
+# Classical ML baseline experiments.
 #
 # Runs every combination of (model x scenario). For monolingual, scenario
 # expands to 4 runs (one per language). For multilingual_joint, scenario is
