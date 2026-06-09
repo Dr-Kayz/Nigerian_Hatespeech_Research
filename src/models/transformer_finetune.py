@@ -83,6 +83,7 @@ def finetune(
     batch_size: int = 16,
     lr: float = 2e-5,
     max_length: int = 128,
+    warmup_ratio: float = 0.0,
     seed: int = 42,
 ):
     """Fine-tune `model_key` on train_df, evaluating on val_df each epoch."""
@@ -104,6 +105,7 @@ def finetune(
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         learning_rate=lr,
+        warmup_ratio=warmup_ratio,
         eval_strategy="epoch",
         save_strategy="no",
         logging_strategy="epoch",
