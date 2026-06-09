@@ -1,3 +1,5 @@
+# Run: python -m src.models.run_phase4 [--only SCENARIO] [--models MODEL ...]
+#
 # Transformer fine-tuning experiments.
 #
 # Models:

@@ -1,3 +1,5 @@
+# Run: python -m src.models.run_phase3
+#
 # Classical ML baseline experiments.
 #
 # Runs every combination of (model x scenario). For monolingual, scenario
