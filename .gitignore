@@ -16,3 +16,5 @@ outputs/logs/*
 *.safetensors
 
 .env
+
+reports/REPORT.md
