@@ -1,0 +1,9 @@
+model,language,neutral_to_hate_rate,hate_to_neutral_rate,n_true_neutral,n_true_hate
+joint_mbert,English,0.1874,0.0976,443,410
+joint_mbert,Yoruba,0.2579,0.2152,442,409
+joint_mbert,Igbo,0.2692,0.1887,442,408
+joint_mbert,Hausa,0.2585,0.1805,441,410
+joint_afroxlmr,English,0.2077,0.0878,443,410
+joint_afroxlmr,Yoruba,0.2715,0.2298,442,409
+joint_afroxlmr,Igbo,0.1946,0.1912,442,408
+joint_afroxlmr,Hausa,0.2018,0.1683,441,410

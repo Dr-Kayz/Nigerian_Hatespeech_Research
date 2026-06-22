@@ -1,0 +1,9 @@
+model,language,overall_err,n_code_switched,err_code_switched,err_not_code_switched,n_artifact,err_artifact,err_not_artifact
+joint_mbert,English,0.2694,233,0.279,0.2673,3,0.6667,0.2685
+joint_mbert,Yoruba,0.429,72,0.4444,0.4281,63,0.5079,0.4251
+joint_mbert,Igbo,0.4109,74,0.3649,0.4136,28,0.7857,0.4028
+joint_mbert,Hausa,0.407,83,0.3735,0.4092,20,0.55,0.4048
+joint_afroxlmr,English,0.246,233,0.2189,0.2518,3,0.0,0.2466
+joint_afroxlmr,Yoruba,0.426,72,0.3889,0.4281,63,0.5079,0.4219
+joint_afroxlmr,Igbo,0.3716,74,0.3108,0.3752,28,0.5357,0.3681
+joint_afroxlmr,Hausa,0.3306,83,0.2771,0.3341,20,0.45,0.3287
