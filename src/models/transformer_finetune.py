@@ -37,6 +37,8 @@ MODEL_REGISTRY = {
     "mbert": "bert-base-multilingual-cased",
     "xlmr": "xlm-roberta-base",
     "afroxlmr": "Davlan/afro-xlmr-base",
+    "naijaxlmt": "manueltonneau/naija-xlm-twitter-base",
+    "bertweet": "vinai/bertweet-base",
 }
 
 TEXT_COL = "text_proc"
@@ -127,8 +129,19 @@ def finetune(
     return trainer, tokenizer
 
 
-def predict(trainer, tokenizer, df, *, max_length: int = 128):
-    """Return integer class predictions for df[TEXT_COL]."""
+def predict(trainer, tokenizer, df, *, max_length: int = 128, return_proba: bool = False):
+    """Predict on df[TEXT_COL].
+
+    Returns integer class predictions by default. If return_proba=True, returns
+    a tuple (preds, probs) where probs is a (n_rows, n_classes) softmax array.
+    """
     ds = _to_hf_dataset(df, tokenizer, max_length)
     out = trainer.predict(ds)
-    return np.argmax(out.predictions, axis=-1)
+    logits = out.predictions
+    preds = np.argmax(logits, axis=-1)
+    if not return_proba:
+        return preds
+    # Softmax over the class axis for probability output.
+    exp = np.exp(logits - logits.max(axis=-1, keepdims=True))
+    probs = exp / exp.sum(axis=-1, keepdims=True)
+    return preds, probs.astype(np.float32)

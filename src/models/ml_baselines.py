@@ -18,6 +18,7 @@ All models receive seed=42 for reproducibility.
 
 from __future__ import annotations
 
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
@@ -25,16 +26,22 @@ from sklearn.svm import LinearSVC
 
 
 def build_pipeline(model_name: str, features, seed: int = 42) -> Pipeline:
-    """Compose (TF-IDF features) -> (classifier) into one sklearn Pipeline."""
+    """Compose (TF-IDF features) -> (classifier) into one sklearn Pipeline.
+
+    All returned pipelines expose predict_proba (LinearSVC is wrapped in
+    CalibratedClassifierCV so that PR-AUC and other probability-based metrics
+    can be computed uniformly across classical models).
+    """
     model_name = model_name.lower()
     if model_name == "svm":
-        clf = LinearSVC(
+        base = LinearSVC(
             C=1.0,
             class_weight="balanced",
             random_state=seed,
             max_iter=5000,
             dual="auto",
         )
+        clf = CalibratedClassifierCV(base, method="sigmoid", cv=3)
     elif model_name == "nb":
         clf = MultinomialNB(alpha=0.1)
     elif model_name == "rf":

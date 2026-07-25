@@ -1,12 +1,12 @@
-# Run: python -m src.models.run_phase3
+# Run: python -m src.models.run_phase3 [--only SCENARIO ...] [--models MODEL ...] [--seeds SEED ...]
 #
 # Classical ML baseline experiments.
 #
-# Runs every combination of (model x scenario). For monolingual, scenario
-# expands to 4 runs (one per language). For multilingual_joint, scenario is
-# 1 run trained on combined data and evaluated overall + per language.
+# Runs every combination of (model x scenario x seed). All classical models
+# produce probability outputs (LinearSVC is wrapped in CalibratedClassifierCV)
+# so PR-AUC is reported uniformly.
 
-seed: 42
+seeds: [42, 123, 2024]
 
 models:
   - svm
@@ -16,9 +16,19 @@ models:
 scenarios:
   - name: monolingual
     languages: [English, Yoruba, Igbo, Hausa]
+
   - name: multilingual_joint
     train_languages: [English, Yoruba, Igbo, Hausa]
     eval_per_language: true
+
+  - name: zero_shot
+    train_language: English
+    test_languages: [Yoruba, Igbo, Hausa]
+
+  - name: few_shot
+    base_train_language: English
+    target_languages: [Yoruba, Igbo, Hausa]
+    shots: [50, 100, 500]
 
 features:
   word_ngrams: [1, 2]

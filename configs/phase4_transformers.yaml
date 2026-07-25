@@ -1,11 +1,13 @@
-# Run: python -m src.models.run_phase4 [--only SCENARIO] [--models MODEL ...]
+# Run: python -m src.models.run_phase4 [--only SCENARIO ...] [--models MODEL ...] [--seeds SEED ...]
 #
 # Transformer fine-tuning experiments.
 #
 # Models:
-#   mbert    - bert-base-multilingual-cased
-#   xlmr     - xlm-roberta-base
-#   afroxlmr - Davlan/afro-xlmr-base
+#   mbert     - bert-base-multilingual-cased
+#   xlmr      - xlm-roberta-base
+#   afroxlmr  - Davlan/afro-xlmr-base
+#   naijaxlmt - manueltonneau/naija-xlm-twitter-base   (XLM-R further pretrained on Nigerian tweets)
+#   bertweet  - vinai/bertweet-base                    (English-only Twitter-pretrained BERT)
 #
 # Scenarios:
 #   monolingual        - train + test same language
@@ -13,9 +15,9 @@
 #   zero_shot          - train English only, test on each African language
 #   few_shot           - English + N native target examples, test on target
 
-seed: 42
+seeds: [42, 123, 2024]
 
-models: [mbert, xlmr, afroxlmr]
+models: [mbert, xlmr, afroxlmr, naijaxlmt, bertweet]
 
 train:
   epochs: 3

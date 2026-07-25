@@ -18,8 +18,10 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
 from sklearn.metrics import (
     accuracy_score,
+    average_precision_score,
     confusion_matrix,
     f1_score,
     precision_score,
@@ -27,8 +29,12 @@ from sklearn.metrics import (
 )
 
 
-def compute_metrics(y_true, y_pred, labels: list[str]) -> dict:
-    """Return a flat dict of metrics; labels indexes are 0..len(labels)-1."""
+def compute_metrics(y_true, y_pred, labels: list[str], y_proba=None) -> dict:
+    """Return a flat dict of metrics; label indexes are 0..len(labels)-1.
+
+    If y_proba is provided (shape [n_samples, n_classes]) PR-AUC values are
+    added: pr_auc_<label> for each class and pr_auc_macro for the mean.
+    """
     n = len(labels)
     out = {
         "accuracy": float(accuracy_score(y_true, y_pred)),
@@ -47,8 +53,37 @@ def compute_metrics(y_true, y_pred, labels: list[str]) -> dict:
     )
     for lbl, f1 in zip(labels, per_class):
         out[f"f1_{lbl}"] = float(f1)
+
+    per_prec = precision_score(
+        y_true, y_pred, average=None, labels=list(range(n)), zero_division=0
+    )
+    per_rec = recall_score(
+        y_true, y_pred, average=None, labels=list(range(n)), zero_division=0
+    )
+    for lbl, p, r in zip(labels, per_prec, per_rec):
+        out[f"precision_{lbl}"] = float(p)
+        out[f"recall_{lbl}"] = float(r)
+
     cm = confusion_matrix(y_true, y_pred, labels=list(range(n)))
     out["confusion_matrix"] = cm.tolist()
+
+    if y_proba is not None:
+        y_true_arr = np.asarray(y_true)
+        y_proba_arr = np.asarray(y_proba)
+        pr_aucs = []
+        for cls_id, lbl in enumerate(labels):
+            y_binary = (y_true_arr == cls_id).astype(int)
+            if y_binary.sum() == 0:
+                pr_auc = float("nan")
+            else:
+                pr_auc = float(
+                    average_precision_score(y_binary, y_proba_arr[:, cls_id])
+                )
+            out[f"pr_auc_{lbl}"] = pr_auc
+            pr_aucs.append(pr_auc)
+        finite = [v for v in pr_aucs if not np.isnan(v)]
+        out["pr_auc_macro"] = float(np.mean(finite)) if finite else float("nan")
+
     return out
 
 
