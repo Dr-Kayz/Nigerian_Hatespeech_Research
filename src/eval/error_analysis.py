@@ -1,9 +1,9 @@
-"""Error analysis for the strongest joint transformer models.
+"""Error analysis for the joint transformer models.
 
 Produces:
     outputs/figures/confusion_matrices_joint.png
-        Grid of per-language confusion matrices for joint mBERT and joint
-        Afro-XLMR (the two transformers that converged in joint training).
+        Grid of per-language confusion matrices for all five joint transformers
+        (mBERT, XLM-R, Afro-XLMR, NaijaXLM-T, BERTweet) at seed 42.
     outputs/tables/neutral_hate_confusion.csv
         Per (model, language) Neutral->Hate and Hate->Neutral confusion rates.
     outputs/tables/error_breakdown_by_flag.csv
@@ -32,12 +32,27 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.utils.io import FIGURES_DIR, LABELS, LANGUAGES, PREDICTIONS_DIR, TABLES_DIR  # noqa: E402
 
 
-MODELS = ["mbert", "afroxlmr"]
-ERROR_SAMPLE_PER_CLASS = 5  # misclassified examples to keep per (model, lang, true_class)
+MODELS = ["mbert", "xlmr", "afroxlmr", "naijaxlmt", "bertweet"]
+SEED = 42  # canonical seed for the qualitative analysis (tables/figures)
+ERROR_SAMPLE_PER_CLASS = 3  # misclassified examples per (model, lang, true_class)
+
+
+def _find_pred_file(model: str) -> Path:
+    """Return the joint prediction CSV path for a model.
+
+    Prefers the retrofit seeded file (phase4_joint_<model>_s<SEED>.csv) and
+    falls back to the pre-retrofit single-seed file if the seeded one is
+    missing, so old and new naming conventions both work.
+    """
+    seeded = PREDICTIONS_DIR / f"phase4_joint_{model}_s{SEED}.csv"
+    legacy = PREDICTIONS_DIR / f"phase4_joint_{model}.csv"
+    if seeded.exists():
+        return seeded
+    return legacy
 
 
 def load_joint(model: str) -> pd.DataFrame:
-    df = pd.read_csv(PREDICTIONS_DIR / f"phase4_joint_{model}.csv")
+    df = pd.read_csv(_find_pred_file(model))
     df["correct"] = df["class"] == df["predicted_class"]
     return df
 
@@ -56,7 +71,7 @@ def per_lang_confusion(df: pd.DataFrame) -> dict[str, np.ndarray]:
 
 def plot_confusion_grid(per_model_per_lang: dict[str, dict[str, np.ndarray]], out_path: Path) -> None:
     n_rows, n_cols = len(MODELS), len(LANGUAGES)
-    fig, axes = plt.subplots(n_rows, n_cols, figsize=(4 * n_cols, 3.5 * n_rows))
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(3.4 * n_cols, 2.8 * n_rows))
     for i, model in enumerate(MODELS):
         for j, lang in enumerate(LANGUAGES):
             cm = per_model_per_lang[model][lang]
@@ -73,9 +88,10 @@ def plot_confusion_grid(per_model_per_lang: dict[str, dict[str, np.ndarray]], ou
                 ax=ax,
                 vmin=0.0,
                 vmax=1.0,
+                annot_kws={"fontsize": 8},
             )
-            ax.set_title(f"joint {model} — {lang}")
-            ax.set_xlabel("Predicted")
+            ax.set_title(f"joint {model} — {lang}", fontsize=9)
+            ax.set_xlabel("Predicted" if i == n_rows - 1 else "")
             ax.set_ylabel("True" if j == 0 else "")
     plt.tight_layout()
     plt.savefig(out_path, dpi=150)

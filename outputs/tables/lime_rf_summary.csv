@@ -1,0 +1,7 @@
+figure,language,true_label,predicted_label,correct,text_snippet,top_tokens_pred_class
+lime_rf_000_NotHate_correct.png,Igbo,Not Hate,Not Hate,correct,Ọtụtụ ụmụ oke na-abịa n'ụlọ gị iji mee mkpesa.,"ụmụ(-0.17), iji(-0.06), gị(-0.05), mkpesa(+0.04), na(-0.03)"
+lime_rf_001_NotHate_wrong.png,Hausa,Not Hate,Hate,wrong,"Sarakuna da gwamnoni na arewa sun fito suna gunaguni game da zanga-zangar, doka ta kafofin sada zumunta amma sun yi shiru a kan, fyade. Ki...","arewa(+0.24), suna(+0.10), gwamnoni(-0.05), sun(+0.03), da(+0.02)"
+lime_rf_002_Neutral_correct.png,English,Neutral,Neutral,correct,Shut up your dirty mouth,"Shut(+0.49), up(+0.15), mouth(-0.07), dirty(-0.03), your(+0.00)"
+lime_rf_003_Neutral_wrong.png,Yoruba,Neutral,Hate,wrong,"nígbà tí àwọn olùṣọ́ àgùntàn fulani ń pa àwọn èèyàn ní sw, ẹ̀yin méjèèjì jẹ́ afọ́jú, adití àti òmùgọ̀ abi? nísinsìnyí tá a ti dìde, tá a sì sọ pé ó tó, ẹ̀yin mé","fulani(+0.37), àwọn(+0.11), òmùgọ(-0.08), àgùntàn(+0.04), méjèèjì(+0.04)"
+lime_rf_004_Hate_correct.png,Igbo,Hate,Hate,correct,"ọ bụ oge ịrịọ Sheikh Gumi ka ọ gwa anyị na otu ahịrịokwu, na otu FREE onyinye d Fulanis ma ọ bụ d Killer acclaimed Herdersmen na-eme ka d uto nke Nigeria GDP ij","Fulanis(+0.29), na(+0.07), ọha(+0.06), eyi(+0.06), egwu(+0.06)"
+lime_rf_005_Hate_wrong.png,Yoruba,Hate,Not Hate,wrong,Ó ti dé wákàtí tá a fi máa mú gbogbo àwọn ẹ̀gún tó wà lórí ilẹ̀ wa kúrò.,"máa(-0.07), ẹ(-0.06), àwọn(-0.04), gbogbo(-0.04), fi(-0.03)"

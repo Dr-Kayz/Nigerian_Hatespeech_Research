@@ -17,4 +17,6 @@ outputs/logs/*
 
 .env
 
-reports/REPORT.md
+reports/*.md
+reports/*.docx
+reports/~$*
